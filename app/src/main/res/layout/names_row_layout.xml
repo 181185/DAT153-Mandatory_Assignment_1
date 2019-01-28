@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/person_list_item_margin"
+    android:paddingBottom="@dimen/person_list_item_padding"
+    android:paddingTop="@dimen/person_list_item_padding"
+    android:background="@color/colorSecondaryLight">
+    <ImageView
+        android:id="@+id/row_image"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/person_list_image_padding"
+        android:paddingRight="@dimen/person_list_image_padding" />
+
+    <TextView
+        android:id="@+id/row_name"
+        android:layout_gravity="center"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/image_text_size" />
+
+    <Button
+        android:id="@+id/row_button"
+        android:layout_width="@dimen/secondary_button_width"
+        android:layout_height="@dimen/secondary_button_height"
+        android:layout_gravity="center"
+        android:text="@string/delete_button_text"
+        android:textSize="@dimen/default_button_text_size"
+        android:textColor="@color/colorTextSecondary"
+        android:background="@color/colorDanger"/>
+</LinearLayout>

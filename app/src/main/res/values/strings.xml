@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Name Quiz</string>
+    <string name="names_db_button_text">Name list</string>
+    <string name="quiz_button_text">Quiz</string>
+    <string name="exit_button_text">Exit</string>
+    <string name="main_title_text">Name Quiz</string>
+    <string name="persons_title_text">Name entries</string>
+    <string name="add_person_title_text">Add a new person</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="quiz_title_text">Quiz</string>
+    <string name="add_person_name_text">Name</string>
+    <string name="add_person_button_text">Add</string>
+    <string name="add_person_image_desc">Add a picture representing the person</string>
+    <string name="quiz_person_image_desc">Picture of person</string>
+    <string name="persons_collection">persons_collection</string>
+    <string name="scale_factor">15</string>
+    <string name="quiz_info_text">Click START NEW QUIZ to start a new quiz.</string>
+    <string name="quiz_start_button_text">Start new quiz</string>
+    <string name="quiz_stop_button_text">Save and stop</string>
+    <string name="quiz_best_score_text">Best score so far:</string>
+    <string name="quiz_current_score_text">Current score:</string>
+    <string name="quiz_preferences_best_score">quiz_best_score</string>
+    <string name="quiz_toast_message">You need to add people before you can play.</string>
+    <string name="picture_taken_toast_message">Picture taken!</string>
+    <string name="person_added_toast_message">Person added!</string>
+    <string name="quiz_guess_button_text">Make guess</string>
+    <string name="quiz_next_button_text">Next person</string>
+    <string name="quiz_correct_guess_text">Correct! You gained a point!</string>
+    <string name="quiz_wrong_guess_text">Wrong! The correct name was:</string>
+    <string name="quiz_input_hint">Who is this?</string>
+    <string name="add_person_choose_image_title">Select an image</string>
+    <string name="add_person_dialog_title">Choose an option</string>
+    <string name="add_person_dialog_first_option">Take new photo</string>
+    <string name="add_person_dialog_second_option">Choose an image from the device</string>
+</resources>

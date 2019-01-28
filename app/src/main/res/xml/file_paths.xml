@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path
+        name="namequiz_person_images"
+        path="Android/data/no.hvl.dat153.slo.namequiz/files/Pictures" />
+</paths>

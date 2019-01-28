@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/main_title_text"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/default_title_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/names_db_button"
+        android:layout_width="@dimen/default_button_width"
+        android:layout_height="@dimen/default_button_height"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/names_db_button_text"
+        android:textSize="@dimen/default_button_text_size"
+        android:onClick="onNamesButtonClick"
+        app:layout_constraintEnd_toEndOf="@+id/main_title"
+        app:layout_constraintStart_toStartOf="@+id/main_title"
+        app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+    <Button
+        android:id="@+id/quiz_button"
+        android:layout_width="@dimen/default_button_width"
+        android:layout_height="@dimen/default_button_height"
+        android:layout_marginTop="32dp"
+        android:text="@string/quiz_button_text"
+        android:textSize="@dimen/default_button_text_size"
+        android:onClick="onQuizButtonClick"
+        app:layout_constraintEnd_toEndOf="@+id/names_db_button"
+        app:layout_constraintStart_toStartOf="@+id/names_db_button"
+        app:layout_constraintTop_toBottomOf="@+id/names_db_button" />
+
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="@dimen/secondary_button_width"
+        android:layout_height="@dimen/secondary_button_height"
+        android:layout_marginBottom="32dp"
+        android:onClick="onExitButtonClick"
+        android:text="@string/exit_button_text"
+        android:textSize="@dimen/default_button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
