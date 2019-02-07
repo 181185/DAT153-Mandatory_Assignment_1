@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="@string/settings_key">
+
+    <PreferenceCategory
+        android:key="@string/settings_userdata_category_key"
+        android:title="@string/settings_userdata_category_title"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:key="@string/settings_username_key"
+            android:title="@string/settings_username_title"
+            android:summary="@string/settings_username_summary"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/settings_storage_category_key"
+        android:title="@string/settings_storage_category_title"
+        app:iconSpaceReserved="false">
+        <SwitchPreference
+            android:key="@string/settings_cloudstorage_key"
+            android:title="@string/settings_cloudstorage_title"
+            android:summary="@string/settings_cloudstorage_summary"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

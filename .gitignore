@@ -81,3 +81,4 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+app/src/main/java/no/hvl/dat153/slo/namequiz/FirebaseStorageHelper.java

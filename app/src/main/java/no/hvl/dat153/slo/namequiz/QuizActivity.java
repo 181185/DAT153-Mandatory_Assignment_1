@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizActivity extends BaseActivity {
     private int currentScore;
     private int bestScore;
 
@@ -42,7 +41,7 @@ public class QuizActivity extends AppCompatActivity {
     private File file;
     private Person currentPerson;
     private PersonsCollection personsCollection;
-    private StorageHelper storageHelper;
+    private LocalStorageHelper localStorageHelper;
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -59,7 +58,7 @@ public class QuizActivity extends AppCompatActivity {
 
         currPersonImage = findViewById(R.id.quiz_image);
         file = new File(getFilesDir(), getString(R.string.persons_collection));
-        storageHelper = new StorageHelper(file);
+        localStorageHelper = new LocalStorageHelper(file);
     }
 
     /**
@@ -169,7 +168,7 @@ public class QuizActivity extends AppCompatActivity {
      * @param view The view that fired the onClick-event
      */
     public void onToggleQuizButtonClick(View view) {
-        personsCollection = storageHelper.loadPersonsCollection();
+        personsCollection = localStorageHelper.loadPersonsCollection();
         boolean isEmptyCollection = personsCollection.getSize() <= 0;
         if(isEmptyCollection) {
             ((ToggleButton) findViewById(R.id.quiz_toggle_quiz_button)).toggle();

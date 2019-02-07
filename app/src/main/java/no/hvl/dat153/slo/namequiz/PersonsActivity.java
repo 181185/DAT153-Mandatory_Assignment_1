@@ -1,31 +1,23 @@
 package no.hvl.dat153.slo.namequiz;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 /**
  * Activity class representing the overview (list) of people recorded within the app.
  */
-public class PersonsActivity extends AppCompatActivity {
+public class PersonsActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private File file;
     private PersonsCollection personsCollection;
-    private StorageHelper storageHelper;
+    private LocalStorageHelper localStorageHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +32,8 @@ public class PersonsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         file = new File(getFilesDir(), getString(R.string.persons_collection));
-        storageHelper = new StorageHelper(file);
-        personsCollection = storageHelper.loadPersonsCollection();
+        localStorageHelper = new LocalStorageHelper(file);
+        personsCollection = localStorageHelper.loadPersonsCollection();
 
         // Specify an adapter
         adapter = new PersonsAdapter(personsCollection, file);

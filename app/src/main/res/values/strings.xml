@@ -32,4 +32,19 @@
     <string name="add_person_dialog_title">Choose an option</string>
     <string name="add_person_dialog_first_option">Take new photo</string>
     <string name="add_person_dialog_second_option">Choose an image from the device</string>
+    <string name="settings_key">settings</string>
+    <string name="settings_userdata_category_title">User data</string>
+    <string name="settings_userdata_category_key">settings_user_data</string>
+    <string name="settings_storage_category_title">Storage</string>
+    <string name="settings_storage_category_key">settings_storage</string>
+    <string name="settings_username_key">settings_username</string>
+    <string name="settings_username_title">Username</string>
+    <string name="settings_username_summary">This is your NameQuiz username</string>
+    <string name="settings_username_dialog_title">Enter your NameQuiz username:</string>
+    <string name="settings_cloudstorage_title">Use cloud storage</string>
+    <string name="settings_cloudstorage_key">settings_cloudstorage</string>
+    <string name="settings_cloudstorage_summary">Choose whether to use cloud storage for images or not</string>
+    <string name="set_username_dialog_title">Choose a username</string>
+    <string name="set_username_dialog_hint">Write your username here</string>
+    <string name="set_username_positive_button_text">Submit</string>
 </resources>

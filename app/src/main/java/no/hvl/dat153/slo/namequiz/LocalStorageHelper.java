@@ -13,9 +13,10 @@ import java.io.ObjectOutputStream;
 /**
  * Helper class for persistent storage of PersonCollection objects, implemented using serialization.
  */
-public class StorageHelper {
+public class LocalStorageHelper implements IStorageHelper {
+    private File file;
 
-    public StorageHelper(File file) { this.file = file; }
+    public LocalStorageHelper(File file) { this.file = file; }
 
     /**
      * Load a serialized PersonCollection object from persistent storage.
@@ -56,6 +57,4 @@ public class StorageHelper {
             Log.e("loadPersonsCollection", "Object could not be written to FileInputStream.");
         }
     }
-
-    private File file;
 }

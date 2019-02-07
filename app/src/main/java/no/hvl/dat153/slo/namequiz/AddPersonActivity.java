@@ -9,10 +9,9 @@ import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.NavUtils;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AlertDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -29,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 
-public class AddPersonActivity extends AppCompatActivity {
+public class AddPersonActivity extends BaseActivity {
     static final int REQUEST_IMAGE_GET = 1;
     static final int REQUEST_TAKE_PHOTO = 2;
 
@@ -39,7 +38,7 @@ public class AddPersonActivity extends AppCompatActivity {
     private EditText editText;
     private File file;
     private PersonsCollection personsCollection;
-    private StorageHelper storageHelper;
+    private LocalStorageHelper localStorageHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,16 +84,16 @@ public class AddPersonActivity extends AppCompatActivity {
 
             // Initialize File object for working on the persons collection
             file = new File(getFilesDir(), getString(R.string.persons_collection));
-            storageHelper = new StorageHelper(file);
+            localStorageHelper = new LocalStorageHelper(file);
 
             // Load the persons collection from file into memory
-            personsCollection = storageHelper.loadPersonsCollection();
+            personsCollection = localStorageHelper.loadPersonsCollection();
 
             // Add new name/photoPath-tuple to persons collection
             personsCollection.add(currentPhotoPath, currentName);
 
             // Save (serialize and overwrite) persons collection on disk
-            storageHelper.savePersonsCollection(personsCollection);
+            localStorageHelper.savePersonsCollection(personsCollection);
 
             // Clear view after saving
             imageView.setImageResource(R.drawable.ic_add_photo);

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "59270361844",
+    "firebase_url": "https://name-quiz-firebase-data-store.firebaseio.com",
+    "project_id": "name-quiz-firebase-data-store",
+    "storage_bucket": "name-quiz-firebase-data-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59270361844:android:2121b8e187b9dee9",
+        "android_client_info": {
+          "package_name": "no.hvl.dat153.slo.namequiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59270361844-kjjtu30l5llha4ghlfuvqf46mbuofd7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPXbnysfSRf7LYWPq2mJuMoub2gZTPLW4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

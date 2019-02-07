@@ -3,7 +3,7 @@ package no.hvl.dat153.slo.namequiz;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,11 +26,11 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.NamesVie
     private int scaleFactor;
     private ViewGroup viewGroup;
     private PersonsCollection personsCollection;
-    private StorageHelper storageHelper;
+    private LocalStorageHelper localStorageHelper;
 
     public PersonsAdapter(PersonsCollection personsCollection, File file) {
         this.personsCollection = personsCollection;
-        storageHelper = new StorageHelper(file);
+        localStorageHelper = new LocalStorageHelper(file);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.NamesVie
 
         // Remove from data structure
         personsCollection.remove(position);
-        storageHelper.savePersonsCollection(personsCollection);
+        localStorageHelper.savePersonsCollection(personsCollection);
 
         // Delete image file from system
         if (picturePath != null) {

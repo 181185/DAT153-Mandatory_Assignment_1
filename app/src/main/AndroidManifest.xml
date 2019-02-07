@@ -9,7 +9,6 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
@@ -22,29 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".QuizActivity"
-            android:parentActivityName=".MainActivity">
 
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".AddPersonActivity"
-            android:parentActivityName=".PersonsActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PersonsActivity" />
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.GET_CONTENT" />-->
-                <!--<data android:mimeType="image/*" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,18 +29,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings"></activity>
+
         <activity
             android:name=".PersonsActivity"
             android:parentActivityName=".MainActivity">
+        </activity>
 
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+        <activity
+            android:name=".AddPersonActivity"
+            android:parentActivityName=".PersonsActivity">
+        </activity>
+
+        <activity
+            android:name=".QuizActivity"
+            android:parentActivityName=".MainActivity">
         </activity>
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="no.hvl.dat153.slo.namequiz.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
