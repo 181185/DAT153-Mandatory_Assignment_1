@@ -9,6 +9,8 @@ import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+
+import androidx.annotation.VisibleForTesting;
 import androidx.core.app.NavUtils;
 import androidx.core.content.FileProvider;
 import androidx.appcompat.app.AlertDialog;
@@ -30,14 +32,19 @@ import java.util.Date;
 
 public class AddPersonActivity extends BaseActivity {
     static final int REQUEST_IMAGE_GET = 1;
-    static final int REQUEST_TAKE_PHOTO = 2;
+
+    @VisibleForTesting
+    public static final int REQUEST_TAKE_PHOTO = 2;
 
     private String currentPhotoPath;
     private String currentName;
     private ImageView imageView;
     private EditText editText;
     private File file;
-    private PersonsCollection personsCollection;
+
+    @VisibleForTesting
+    public PersonsCollection personsCollection;
+
     private LocalStorageHelper localStorageHelper;
 
     @Override
@@ -61,6 +68,8 @@ public class AddPersonActivity extends BaseActivity {
                 currentName = s.toString();
             }
         });
+
+        setupDataStructure();
     }
 
     // Make the physical "BACK" button on the device behave the same way as the "UP" button
@@ -82,13 +91,6 @@ public class AddPersonActivity extends BaseActivity {
         if (textNotEmpty && photoPathNotEmpty) {
             Toast.makeText(this, getString(R.string.person_added_toast_message), Toast.LENGTH_LONG).show();
 
-            // Initialize File object for working on the persons collection
-            file = new File(getFilesDir(), getString(R.string.persons_collection));
-            localStorageHelper = new LocalStorageHelper(file);
-
-            // Load the persons collection from file into memory
-            personsCollection = localStorageHelper.loadPersonsCollection();
-
             // Add new name/photoPath-tuple to persons collection
             personsCollection.add(currentPhotoPath, currentName);
 
@@ -101,6 +103,15 @@ public class AddPersonActivity extends BaseActivity {
             currentPhotoPath = "";
             currentName = "";
         }
+    }
+
+    private void setupDataStructure() {
+        // Initialize File object for working on the persons collection
+        file = new File(getFilesDir(), getString(R.string.persons_collection));
+        localStorageHelper = new LocalStorageHelper(file);
+
+        // Load the persons collection from file into memory
+        personsCollection = localStorageHelper.loadPersonsCollection();
     }
 
     /**
@@ -126,8 +137,8 @@ public class AddPersonActivity extends BaseActivity {
      */
     private void createOptionsDialog() {
         CharSequence[] items = {
-                getString(R.string.add_person_dialog_first_option),
-                getString(R.string.add_person_dialog_second_option)
+                getString(R.string.add_person_dialog_camera_option),
+                getString(R.string.add_person_dialog_picker_option)
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

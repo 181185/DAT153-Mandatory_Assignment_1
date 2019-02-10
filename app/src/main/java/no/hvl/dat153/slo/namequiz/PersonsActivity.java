@@ -2,6 +2,8 @@ package no.hvl.dat153.slo.namequiz;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.VisibleForTesting;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
@@ -16,7 +18,9 @@ public class PersonsActivity extends BaseActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private File file;
-    private PersonsCollection personsCollection;
+
+    @VisibleForTesting
+    public PersonsCollection personsCollection;
     private LocalStorageHelper localStorageHelper;
 
     @Override

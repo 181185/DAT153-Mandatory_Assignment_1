@@ -24,8 +24,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
 
+import androidx.annotation.VisibleForTesting;
+
 public class QuizActivity extends BaseActivity {
-    private int currentScore;
+    @VisibleForTesting
+    public int currentScore;
     private int bestScore;
 
     private TextView bestScoreCounter;
@@ -39,8 +42,11 @@ public class QuizActivity extends BaseActivity {
     private Button nextPersonButton;
 
     private File file;
-    private Person currentPerson;
+
+    @VisibleForTesting
+    public Person currentPerson;
     private PersonsCollection personsCollection;
+
     private LocalStorageHelper localStorageHelper;
     private SharedPreferences sharedPreferences;
 
@@ -132,8 +138,6 @@ public class QuizActivity extends BaseActivity {
      * currently being displayed in the active quiz-session.
      */
     private void makeGuess() {
-        hideSoftKeyboard();
-
         String trimmedInput = guessInput.getText().toString().trim();
         boolean isRightGuess = currentPerson.getName().equals(trimmedInput);
 
@@ -203,6 +207,7 @@ public class QuizActivity extends BaseActivity {
      * @param view The view that fired the onClick-event
      */
     public void onGuessButtonClick(View view) {
+        hideSoftKeyboard();
         makeGuess();
     }
 

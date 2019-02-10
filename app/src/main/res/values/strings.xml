@@ -30,8 +30,8 @@
     <string name="quiz_input_hint">Who is this?</string>
     <string name="add_person_choose_image_title">Select an image</string>
     <string name="add_person_dialog_title">Choose an option</string>
-    <string name="add_person_dialog_first_option">Take new photo</string>
-    <string name="add_person_dialog_second_option">Choose an image from the device</string>
+    <string name="add_person_dialog_camera_option">Take new photo</string>
+    <string name="add_person_dialog_picker_option">Choose an image from the device</string>
     <string name="settings_key">settings</string>
     <string name="settings_userdata_category_title">User data</string>
     <string name="settings_userdata_category_key">settings_user_data</string>
