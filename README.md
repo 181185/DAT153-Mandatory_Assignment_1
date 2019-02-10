@@ -1,1 +1,1 @@
-# DAT153-Mandatory_Assignment_1 - Name Quiz
+# DAT153 Mandatory Assignment 1 & 2 - Name Quiz
