@@ -47,13 +47,20 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.NamesVie
             }
         });
 
+        nwh.button.setId(R.string.delete_button_id);
+
         return nwh;
     }
 
     @Override
     public void onBindViewHolder(PersonsAdapter.NamesViewHolder viewHolder, int position) {
         viewHolder.name.setText(personsCollection.getName(position));
-        if(URLUtil.isContentUrl(personsCollection.getPicturePath(position)))
+        String picturePath = personsCollection.getPicturePath(position);
+
+
+        if(picturePath.equals(viewGroup.getContext().getString(R.string.no_image_path_name)))
+            viewHolder.image.setImageResource(R.drawable.cat1);
+        else if(URLUtil.isContentUrl(picturePath))
             setPictureFromGallery(viewHolder.image, personsCollection.getPicturePath(position));
         else
             setPicture(viewHolder.image, personsCollection.getPicturePath(position));
@@ -88,7 +95,7 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.NamesVie
         localStorageHelper.savePersonsCollection(personsCollection);
 
         // Delete image file from system
-        if (picturePath != null) {
+        if (!URLUtil.isContentUrl(picturePath) || picturePath != null) {
             new File(picturePath).delete();
         }
 

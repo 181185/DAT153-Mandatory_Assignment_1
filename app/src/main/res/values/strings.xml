@@ -7,6 +7,8 @@
     <string name="persons_title_text">Name entries</string>
     <string name="add_person_title_text">Add a new person</string>
     <string name="delete_button_text">Delete</string>
+    <string name="delete_button_id">delete_button</string>
+    <string name="no_image_path_name">no_image_path</string>
     <string name="quiz_title_text">Quiz</string>
     <string name="add_person_name_text">Name</string>
     <string name="add_person_button_text">Add</string>
